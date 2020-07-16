@@ -38,5 +38,17 @@ Afterwards, make an account, verify it (or not) and make yourself an admin by go
 Backdoor only works if there is no superadmin yet, afterwards you can disable registeration in the .env by changing AUTH_REGISTER to false
 
 
-        
-              
+Things used
+Laravel
+Laravel Adminlte
+Syntax/Steamapi
+Node modules:
+    Node-Steam-User
+    Node-Steam-TOTP
+    Crypto-js
+    Crypto
+    Node-forge
+    Node-mysql
+    FS
+
+Prob more          
