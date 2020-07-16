@@ -1,6 +1,0 @@
-[submodule "SteamHourBoosterBackend"]
-	path = SteamHourBoosterBackend
-	url = https://github.com/DoKM/SteamHourBoosterBackend
-[submodule "SteamHourBoosterFrontend"]
-	path = SteamHourBoosterFrontend
-	url = https://github.com/DoKM/SteamHourBoosterFrontend
