@@ -1,0 +1,64 @@
+version: '3.1'
+volumes:
+  publicKey:
+    driver: local
+  mysql:
+    driver: local
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: digitalocean.com/php
+    container_name: php
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+
+  #Nginx Service
+  webserver:
+    image: nginx
+    container_name: webserver
+    restart: unless-stopped
+    working_dir: /var/www
+    tty: true
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d
+  mysql:
+    build:
+      context: ./mysql
+      args:
+        - 'MYSQL_VERSION=5.7.30'
+    container_name: mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: SteamHourBooster
+      MYSQL_ROOT_PASSWORD: DoKM91AS
+      MYSQL_USER: SteamHourBooster
+      MYSQL_PASSWORD: DoKM91ASonGithub
+      SERVICE_NAME: mysql
+    volumes:
+      - mysql:/var/lib/mysql/
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+      - './mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d'
+  steam_hourbooster:
+    working_dir: /app
+    build: ../Backend/.
+    container_name: Steam_HourBooster
+    volumes:
+      - '../Backend:/app'
+      - './storage/app/crypto/RSA:/app/storage/crypto/RSA/public'
+    tty: true
+    restart: always

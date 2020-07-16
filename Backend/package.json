@@ -1,0 +1,26 @@
+{
+  "name": "steam-hourbooster",
+  "version": "1.0.0",
+  "description": "Private Steam Hour Booster",
+  "main": "build/app.js",
+  "private": true,
+  "scripts": {
+    "start": "node ./build/app.js",
+    "build": "tsc",
+    "watch": "tsc-watch "
+  },
+  "author": "DoKM91AS",
+  "license": "MIT",
+  "devDependencies": {
+    "tsc-watch": "^4.2.9",
+    "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "@types/node": "^13.13.14",
+    "crypto-js": "^4.0.0",
+    "mysql": "^2.18.1",
+    "node-forge": "^0.9.1",
+    "steam-totp": "^2.1.1",
+    "steam-user": "^4.17.0"
+  }
+}

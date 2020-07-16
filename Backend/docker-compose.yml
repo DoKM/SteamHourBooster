@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    backend-app:
+        working_dir: /app
+        build: .
+        volumes:
+            - .:/app
+            - publicKey:/app/storage/crypto/RSA/private
+        tty: true
+
+volumes:
+    publicKey: {}
