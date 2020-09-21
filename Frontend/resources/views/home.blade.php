@@ -85,11 +85,8 @@
 
                     <div class="media-body media-middle">
                         <p>This project is free for you to use and modify.</p>
-
                         
-                        <a href="https://github.com/DoKM/SteamHourBoosterFrontend">The Frontend</a> - 
-                        
-                        <a href="https://github.com/DoKM/SteamHourBoosterBackend">The Backend</a>
+                        <a href="https://github.com/DoKM/SteamHourBooster">Github Link</a>
                         <br>
                         <small>Not meant for commercial purposes.</small>
                     </div>
