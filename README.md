@@ -28,6 +28,7 @@ For this to work, you could use Docker with docker-compose:
         mysql info: find it in the docker-compose.yml file in the Frontend folder
         Steam api: request an api key
         Email provider: use gmail or go disable it in the frontend/routes/web.php auth(verify) (should be false then)
+        and set APP_ENV to "production" if you're using https
 
 or manually (no idea, really, wasnt planning to do it this way from the start, so good luck)
 
