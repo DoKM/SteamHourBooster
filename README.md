@@ -1,5 +1,7 @@
 # SteamHourBooster
-
+## This is pretty bad
+## don't use it
+## thats why i archived it
 Steam HourBooster made in nodeJS with a php/Laravel based Frontend using the adminlte template
 
 Features:
